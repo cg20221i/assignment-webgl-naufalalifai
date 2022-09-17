@@ -49,7 +49,15 @@ function main() {
         0.475, 0.74,
         0.515, 0.7,
         0.515, 0.55,
-        0.45, 0.5
+        0.45, 0.5,
+
+        //alphabet M
+        -0.7, -0.3,
+        -0.5, -0.45,
+        -0.7, -0.6,
+        -0.3, -0.3,
+        -0.5, -0.45,
+        -0.3, -0.6
     ];
 
     var buffer = gl.createBuffer();
@@ -100,4 +108,7 @@ function main() {
     //digit 8
     gl.drawArrays(gl.LINE_STRIP, 16, 14);
     gl.drawArrays(gl.LINE_STRIP, 30, 14);
+
+    //alphabet M
+    gl.drawArrays(gl.TRIANGLES, 44, 6);
 }

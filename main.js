@@ -3,9 +3,11 @@ function main() {
     var gl = canvas.getContext("webgl");
 
     // VERTEX SHADER
-    var vertexShaderCode =
-    "void main () {" +
-    "}";
+    var vertexShaderCode = `
+        void main() {
+
+        }
+    `;
     var vertexShader = gl.createShader(gl.VERTEX_SHADER);
     gl.shaderSource(vertexShader, vertexShaderCode);
     gl.compileShader(vertexShader);

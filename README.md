@@ -6,3 +6,6 @@ Muhammad Naufal Alif Islami\
 | Last 2 Digits  | Last 2 Alphabets |
 | :-------------: | :-------------: |
 | 0 8  | m i  |
+
+# Preview
+<img src="Screenshot.png" width="500" height="500">

@@ -61,7 +61,17 @@ function main() {
         -0.6, -0.52,
         -0.5, -0.45,
         -0.5, -0.6,
-        -0.4, -0.52
+        -0.4, -0.52,
+
+        //aphabet I
+        0.5, -0.8,
+        0.4, -0.7,
+        0.5, -0.6,
+        0.4, -0.5,
+        0.5, -0.4,
+        0.4, -0.3,
+        0.5, -0.2,
+        0.6, -0.3
     ];
 
     var buffer = gl.createBuffer();
@@ -116,4 +126,7 @@ function main() {
     //alphabet M
     gl.drawArrays(gl.TRIANGLES, 44, 6);
     gl.drawArrays(gl.TRIANGLE_STRIP, 50, 4);
+
+    //alphabet I
+    gl.drawArrays(gl.TRIANGLE_STRIP, 54, 8);
 }

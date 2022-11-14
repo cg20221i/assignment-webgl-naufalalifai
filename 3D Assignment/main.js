@@ -3,56 +3,8 @@ function main() {
     var gl = canvas.getContext("webgl");
 
     var vertices = [
-        //digit 0
-        -0.6, 0.7,
-        -0.55, 0.75,
-        -0.35, 0.75,
-        -0.3, 0.7,
-        -0.3, 0.3,
-        -0.35, 0.25,
-        -0.55, 0.25,
-        -0.6, 0.3,
-        -0.565, 0.675,
-        -0.525, 0.715,
-        -0.365, 0.715,
-        -0.565, 0.315,
-        -0.335, 0.325,
-        -0.375, 0.285,
-        -0.535, 0.285,
-        -0.335, 0.685,
-
-        //digit 8
-        0.35, 0.5,
-        0.285, 0.45,
-        0.285, 0.3,
-        0.325, 0.26,
-        0.475 , 0.26,
-        0.515, 0.3,
-        0.515, 0.45,
-        0.35, 0.6,
-        0.35, 0.65,
-        0.375, 0.675,
-        0.425, 0.675,
-        0.45, 0.65,
-        0.45, 0.6,
-        0.4, 0.55,
-        0.4, 0.45,
-        0.35, 0.4,
-        0.35, 0.35,
-        0.375, 0.325,
-        0.425, 0.325,
-        0.45, 0.35,
-        0.45, 0.4,
-        0.285, 0.55,
-        0.285, 0.7,
-        0.325, 0.74,
-        0.475, 0.74,
-        0.515, 0.7,
-        0.515, 0.55,
-        0.45, 0.5,
-
         //alphabet M
-        -0.7, -0.2,
+        -0.7, -0.2, 
         -0.4, -0.5,
         -0.7, -0.8,
         -0.1, -0.2,
@@ -118,20 +70,11 @@ function main() {
     gl.clearColor(0.85, 0.16, 0.11, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    //digit 0
-    gl.drawArrays(gl.LINE_LOOP, 0, 8);
-    gl.drawArrays(gl.LINE_LOOP, 8, 4);
-    gl.drawArrays(gl.LINE_LOOP, 12, 4);
-
-    //digit 8
-    gl.drawArrays(gl.LINE_STRIP, 16, 14);
-    gl.drawArrays(gl.LINE_STRIP, 30, 14);
-
     //alphabet M
-    gl.drawArrays(gl.TRIANGLES, 44, 6);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 50, 4);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 6, 4);
 
     //alphabet I
-    gl.drawArrays(gl.TRIANGLE_STRIP, 54, 8);
-    gl.drawArrays(gl.TRIANGLES, 62, 3);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 10, 8);
+    gl.drawArrays(gl.TRIANGLES, 18, 3);
 }

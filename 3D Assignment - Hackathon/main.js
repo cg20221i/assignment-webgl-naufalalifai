@@ -192,6 +192,39 @@ function main() {
         0.7, 0.3, 0, 0, 0, 1,    0, -1, 0,    //159
         0.3, 0.3, -0.2, 0, 0, 1,    0, -1, 0,    //160
         0.7, 0.3, -0.2, 0, 0, 1,    0, -1, 0,    //161
+
+
+        //Cube 
+        // Face A       
+        -0.1, -0.1, -0.2,     1, 1, 1,    0, 0, -1,   // Index:  0    
+        0.1, -0.1, -0.2,     1, 1, 1,    0, 0, -1,   // Index:  1
+        0.1,  0.1, -0.2,     1, 1, 1,    0, 0, -1,   // Index:  2
+        -0.1,  0.1, -0.2,     1, 1, 1,    0, 0, -1,   // Index:  3
+        // Face B     
+        -0.1, -0.1, 0,     1, 1, 1,    0, 0, 1,    // Index:  4
+        0.1, -0.1,  0,     1, 1, 1,    0, 0, 1,    // Index:  5
+        0.1,  0.1,  0,     1, 1, 1,    0, 0, 1,    // Index:  6
+        -0.1,  0.1,  0,     1, 1, 1,    0, 0, 1,    // Index:  7
+        // Face C      
+        -0.1, -0.1, -0.2,     1, 1, 1,    -1, 0, 0,   // Index:  8
+        -0.1,  0.1, -0.2,     1, 1, 1,    -1, 0, 0,   // Index:  9
+        -0.1,  0.1,  0,     1, 1, 1,    -1, 0, 0,   // Index: 10
+        -0.1, -0.1,  0,     1, 1, 1,    -1, 0, 0,   // Index: 11
+        // Face D    
+        0.1, -0.1, -0.2,     1, 1, 1,    1, 0, 0,    // Index: 12
+        0.1,  0.1, -0.2,     1, 1, 1,    1, 0, 0,    // Index: 13
+        0.1,  0.1,  0,     1, 1, 1,    1, 0, 0,    // Index: 14
+        0.1, -0.1,  0,     1, 1, 1,    1, 0, 0,    // Index: 15
+        // Face E    
+        -0.1, -0.1, -0.2,     1, 1, 1,  0, -1, 0,   // Index: 16
+        -0.1, -0.1,  0,     1, 1, 1,  0, -1, 0,   // Index: 17
+        0.1, -0.1,  0,     1, 1, 1,  0, -1, 0,   // Index: 18
+        0.1, -0.1, -0.2,     1, 1, 1,  0, -1, 0,   // Index: 19
+        // Face F     
+        -0.1,  0.1, -0.2,     1, 1, 1,    0, 1, 0,    // Index: 20
+        -0.1,  0.1,  0,     1, 1, 1,    0, 1, 0,    // Index: 21
+        0.1,  0.1,  0,     1, 1, 1,    0, 1, 0,    // Index: 22
+        0.1,  0.1, -0.2,     1, 1, 1,    0, 1, 0     // Index: 23
     ];
 
     var indices = [
@@ -222,7 +255,14 @@ function main() {
         134, 135, 136, 135, 136, 137, 135, 137, 138, 137, 138, 139, 138, 139, 140, 139, 140, 141, 140, 141, 142, 141, 142, 143,
         144, 145, 146, 145, 146, 147, 145, 147, 148, 147, 148, 149, 148, 149, 150, 149, 150, 151, 150, 151, 152, 151, 152, 153,
         154, 155, 156, 155, 156, 157,
-        158, 159, 160, 159, 160, 161
+        158, 159, 160, 159, 160, 161,
+
+        162, 163, 164,     162, 164, 165,     // Face A
+        166, 167, 168,     166, 168, 169,     // Face B
+        170, 171, 172,    170, 172, 173,   // Face C
+        174, 175, 176,  174, 176, 177,  // Face D
+        178, 179, 180,  178, 180, 181,  // Face E
+        182, 183, 184,  182, 184, 185   // Face F    
 
     ];
 
@@ -310,12 +350,12 @@ function main() {
     var isAnimated = false;
     var theta = 0.0;
     var direction = "";
-    var dX = 0.0;
-    var dY = 0.0;
+    var dX = 0.01;
+    var dY = 0.01;
     // For the model (all linear transformation)
     var uModel = gl.getUniformLocation(shaderProgram, "uModel");
     // For the camera
-    var camera = [0.0, 0.0, 5.0];
+    var camera = [0.0, 0.0, 7.5]; //7.5 unit from the origin outwards the screen
     var uView = gl.getUniformLocation(shaderProgram, "uView");
     var view = glMatrix.mat4.create();  // Create an identity matrix
     glMatrix.mat4.lookAt(
@@ -332,8 +372,8 @@ function main() {
         perspective,
         Math.PI/3,  // 60 degrees
         1.0,
-        0.5, 
-        10.0
+        0.5,
+        50.0
     );
     gl.uniformMatrix4fv(uProjection, false, perspective);
 
@@ -505,7 +545,7 @@ function main() {
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         var model = glMatrix.mat4.create();
         if (isAnimated) {
-            theta += 0.01;
+            theta += 0.0001;
         }
         switch (direction) {
             case "up":

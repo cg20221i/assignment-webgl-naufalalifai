@@ -382,7 +382,7 @@ function main() {
         // Ambient
     var uAmbientIntensity = gl.getUniformLocation(shaderProgram, "uAmbientIntensity");
     gl.uniform3fv(uLightConstant, [1.0, 1.0, 1.0]);   // white color
-    gl.uniform1f(uAmbientIntensity, 0.4);             // 40% intensity
+    gl.uniform1f(uAmbientIntensity, 0.308);             // ambient intensity
         // Diffuse
     var uLightPosition = gl.getUniformLocation(shaderProgram, "uLightPosition");
     gl.uniform3fv(uLightPosition, [0.0, 0.0, -0.1]);

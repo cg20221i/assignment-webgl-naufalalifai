@@ -326,7 +326,7 @@ function main() {
             float cosPhi = dot(normalizedReflector, normalizedViewer);
             vec3 specular = vec3(0., 0., 0.);
             if (cosPhi > 0.) {
-                float shininessConstant = 100.0;    // bare minimum spec for metal
+                float shininessConstant = 150.0;    //  metal
                 float specularIntensity = pow(cosPhi, shininessConstant);
                 specular = uLightConstant * specularIntensity;
             }

@@ -385,7 +385,7 @@ function main() {
     gl.uniform1f(uAmbientIntensity, 0.4);             // 40% intensity
         // Diffuse
     var uLightPosition = gl.getUniformLocation(shaderProgram, "uLightPosition");
-    gl.uniform3fv(uLightPosition, [1.0, 0.0, 1.0]);
+    gl.uniform3fv(uLightPosition, [0.0, 0.0, -0.1]);
     var uNormalModel = gl.getUniformLocation(shaderProgram, "uNormalModel");
         // Specular
     var uViewerPosition = gl.getUniformLocation(shaderProgram, "uViewerPosition");
